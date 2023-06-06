@@ -7,7 +7,7 @@ public class Exam
         int correct = 0;
         Scanner input = new Scanner(System.in);
 
-        System.out.printf("Which is the most beatiful girl in the world?%nA) Lady Gaga%nB) Jolyne Kujo%nC)-----------------------%nD) Belle Delphine%n");
+        System.out.printf("hahahahahaha");
         String answer = input.nextLine();
         switch (answer)
         {
