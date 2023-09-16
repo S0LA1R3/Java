@@ -1,5 +1,6 @@
 public class Employee
 {
+    private static int count = 0;
     private String firstName,
     lastName;
     private Date birthDate;
@@ -14,6 +15,10 @@ public class Employee
         this.hireDate = hireDate;
         if (salary > 0.0)
             this.salary = salary;
+
+        ++count;
+        System.out.printf("Employee constructor: %s %s; count = %d%n",
+        firstName, lastName, count);
     }
     public void setFirstName(String firstName)
     {
@@ -54,6 +59,10 @@ public class Employee
     public double getAnualSalary()
     {
         return salary * 12;
+    }
+
+    public static int getCount(){
+        return count;
     }
 
     public String toString(){

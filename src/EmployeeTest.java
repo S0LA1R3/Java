@@ -2,10 +2,19 @@ public class EmployeeTest
 {
     public static void main(String[] args)
     {
+        System.out.printf("Employees before instantiation: %d%n",
+        Employee.getCount());
+
         Date birth = new Date(7, 24, 1949);
         Date hire = new Date(3, 12, 1988);
         Employee trab1 = new Employee("Jonatas", "Boaze", 200, birth, hire),
                 trab2 = new Employee("Guilherme", "Braga", 7500, birth, hire);
+
+        System.out.printf("%nEmployees after instantiation:%n");
+        System.out.printf("via trab1.getCount(): %d%n", trab1.getCount());
+        System.out.printf("via trab2.getCount(): %d%n", trab2.getCount());
+        System.out.printf("via Employee.getCount() %d%n",
+        Employee.getCount());
 
         System.out.printf("First enterprise's employee (%s %s) anual salary: $%.2f%n",
                 trab1.getFirstName(), trab1.getLastName(), trab1.getAnualSalary());
