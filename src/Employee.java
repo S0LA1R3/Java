@@ -2,12 +2,16 @@ public class Employee
 {
     private String firstName,
     lastName;
+    private Date birthDate;
+    private Date hireDate;
     private double salary;
 
-    public Employee(String firstName, String lastName, double salary)
+    public Employee(String firstName, String lastName, double salary, Date birthDate, Date hireDate)
     {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.hireDate = hireDate;
         if (salary > 0.0)
             this.salary = salary;
     }
@@ -50,5 +54,10 @@ public class Employee
     public double getAnualSalary()
     {
         return salary * 12;
+    }
+
+    public String toString(){
+        return String.format("%s, %s Hired: %s Birthday: %s",
+        lastName, firstName, hireDate, birthDate);
     }
 }
