@@ -111,6 +111,6 @@ public class CardGame
         System.out.printf("%nThe Computer result is: %s%n%n", result);
 
         String bestHand = DeckOfCards.playersHandAnalysis(hand, hand2);
-        System.out.print(bestHand);
+        System.out.println(bestHand);
     }
 }
