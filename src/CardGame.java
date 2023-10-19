@@ -112,5 +112,7 @@ public class CardGame
 
         String bestHand = DeckOfCards.playersHandAnalysis(hand, hand2);
         System.out.println(bestHand);
+
+        input.close();
     }
 }

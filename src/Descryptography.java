@@ -17,5 +17,7 @@ public class Descryptography
         int descryptographedData = (thousand+3)%10*1000+(hundred+3)%10*100+(ten+3)%10*10+(unit+3)%10;
 
         System.out.printf("Descryptographed data: %d", descryptographedData);
+
+        input.close();
     }
 }

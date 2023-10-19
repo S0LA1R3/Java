@@ -34,5 +34,7 @@ public class Exam
             case 2 -> System.out.printf("%nGood");
             default -> System.out.printf("%nUgly!");
         }
+
+        input.close();
     }
 }

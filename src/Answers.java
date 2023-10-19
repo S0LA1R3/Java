@@ -32,5 +32,7 @@ public class Answers
         {
             System.out.printf("%5d%14d%n", i+1, frequency[i]);
         }
+
+        input.close();
     }
 }

@@ -17,5 +17,7 @@ public class Criptography
         int cryptographedData = thousand*1000+hundred*100+ten*10+unit;
 
         System.out.printf("Cryptographed data: %d", cryptographedData);
+
+        input.close();
     }
 }

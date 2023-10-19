@@ -22,5 +22,7 @@ public class DateTest
         date.setYear(year);
 
         System.out.printf("%nThe actual date is %s", date.displayDate());
+
+        input.close();
     }
 }

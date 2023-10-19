@@ -66,5 +66,6 @@ public class FuelConsume
         System.out.printf("The total km for the travel was %dkm and the total fuel consumed was %dl.",
                 totalKm, totalFuel);
 
+        input.close();
     }
 }

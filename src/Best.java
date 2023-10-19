@@ -21,5 +21,7 @@ public class Best
         }
 
         System.out.printf("%n%nThe largest number is %d.", largest);
+
+        input.close();
     }
 }

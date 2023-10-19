@@ -90,6 +90,8 @@ public class MathQuizGenerator
         {
             System.out.print("Call help to your teacher.");
         }
+
+        input.close();
     }
 
     public static String randomOperationSentence()

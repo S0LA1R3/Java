@@ -35,5 +35,7 @@ public class CreditLimitTest
         {
             System.out.printf("%nCredit limit exceeded!");
         }
+
+        input.close();
     }
 }

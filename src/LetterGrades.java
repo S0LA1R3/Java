@@ -50,5 +50,7 @@ public class LetterGrades
         {
             System.out.println("No grades were entered");
         }
+
+        input.close();
     }
 }

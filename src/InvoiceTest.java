@@ -31,5 +31,7 @@ public class InvoiceTest
                 invoice.getNumber(), invoice.getDescription(), invoice.getQuantity(), invoice.getItemPrice());
         System.out.printf("Calculating invoice...%n");
         System.out.printf("Invoice value: %s", invoice.getInvoiceAmount());
+
+        input.close();
     }
 }

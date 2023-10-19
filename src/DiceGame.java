@@ -1,73 +1,70 @@
 import java.security.SecureRandom;
+import java.util.Scanner;
 
 public class DiceGame
 {
-    public static final SecureRandom randomNumbers = new SecureRandom();
-    private enum Status {CONTINUE, WON, LOST}
-    private static final int TINY_BOOBS = 2;
-    private static final int GIGA_NUMBER = 3;
-    private static final int ANOTHER_GIGA = 7;
-    private static final int ELEVEN = 11;
-    private static final int SHOTGUN = 12;
-
     public static void main(String[] args)
     {
-        int myPoint = 0;
-        Status gameStatus;
-        int sumOfDice = rollDice();
+        SecureRandom randomNumbers = new SecureRandom();
+        Scanner input = new Scanner(System.in);
+        int sum = 0;
+        int pontuation = 0;
+        int counter2 = 0;
+        boolean win = false;
 
-        switch(sumOfDice)
+        while (!win)
         {
-            case ANOTHER_GIGA, ELEVEN ->
+            for (int counter = 0; counter < 2; ++counter)
             {
-                gameStatus = Status.WON;
-                break;
+                int face = 1 + randomNumbers.nextInt(6);
+                sum += face;
             }
-            case TINY_BOOBS, GIGA_NUMBER, SHOTGUN ->
+
+            if (counter2 == 0)
             {
-                gameStatus = Status.LOST;
-                break;
+                switch (sum)
+                {
+                    case 7, 11 ->
+                    {
+                        System.out.printf("Your sum is %d.%nYou win!", sum);
+                        win = true;
+                    }
+                    case 2, 3, 12 ->
+                    {
+                        System.out.printf("Your sum is %d.%nYou lose!", sum);
+                        win = true;
+                    }
+                    default ->
+                    {
+                        pontuation = sum;
+                        System.out.printf("Your sum is %d.%nNow your score is %d.", sum, pontuation);
+
+                        System.out.printf("%n%nEnter to continue");
+                        input.nextLine();
+                        System.out.println();
+                    }
+                }
             }
-            default ->
+            else if (pontuation == sum)
             {
-                gameStatus = Status.CONTINUE;
-                myPoint = sumOfDice;
-                System.out.printf("Point is %d%n", myPoint);
-                break;
+                System.out.printf("Your sum is: %d. It's equal to your score!.%nCongratulation you win!", sum);
+                win = true;
             }
+            else
+            {
+                pontuation = sum;
+                System.out.printf("Your sum is %d.%nNow your score is %d.", sum, pontuation);
+
+                System.out.printf("%n%nEnter to continue");
+                input.nextLine();
+                System.out.println();
+            }
+
+            sum = 0;
+
+            ++counter2;
         }
 
-        while (gameStatus == Status.CONTINUE)
-        {
-            sumOfDice = rollDice();
-
-            if (sumOfDice == myPoint)
-            {
-                gameStatus = Status.WON;
-            } else if (sumOfDice == ANOTHER_GIGA)
-            {
-                gameStatus = Status.LOST;
-            }
-        }
-
-        if (gameStatus == Status.WON)
-        {
-            System.out.print("Player wins");
-        }
-        else
-        {
-            System.out.print("Player loses");
-        }
-    }
-
-    public static int rollDice()
-    {
-        int die1 = 1 + randomNumbers.nextInt(6);
-        int die2 = 1 + randomNumbers.nextInt(6);
-        int sum = die1 + die2;
-
-        System.out.printf("Player rolled %d + %d = %d%n", die1, die2, sum);
-
-        return sum;
+        input.close();
     }
 }

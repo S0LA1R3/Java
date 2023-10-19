@@ -32,5 +32,7 @@ public class HealthProfileTest
         System.out.printf("%nPatient name: %s %s%nPatient birthday: %s%nPatient Age: %s%nPatient Max Heart Rate: %d%nPatient target heart rate: %.0f%nPatient BMI: %.1f%n%n",
                 paciente.getFirstName(), paciente.getLastName(), paciente.getBirthDay(), paciente.getAge(), paciente.getMaxHeartRate(), paciente.getTargetHeartRate(), paciente.getIMC());
         System.out.printf("BMI VALUES%nUnderweight: less than 18,5%nNormal: between 18,5 and 24,9%nOverweight: between 25 and 29,9%nObese: 30 or greater");
+
+        input.close();
     }
 }

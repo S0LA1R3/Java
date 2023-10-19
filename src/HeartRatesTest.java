@@ -23,5 +23,7 @@ public class HeartRatesTest
 
         System.out.printf("%nPatient name: %s %s%nPatient birthday: %s%nPatient Age: %s%nPatient Max Heart Rate: %d%nPatient target heart rate: %.0f%n",
                 pessoa.getFirstName(), pessoa.getLastName(), pessoa.getBirthDay(), pessoa.getAge(), pessoa.getMaxHeartRate(), pessoa.getTargetHeartRate());
+
+        input.close();
     }
 }
