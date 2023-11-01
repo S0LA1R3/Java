@@ -9,7 +9,7 @@ int t2 = 0xFA;
 int up, upCopy, down, downCopy = 4;
 char flag = 0;
 
-void freqD(){
+void freqU(){
 	if(t2 <= 0xFA){
 		t2 += 0x5;
 	} else if (t1 < 0xFF){
@@ -23,7 +23,7 @@ void freqD(){
 	TL0 = t2;
 }
 
-void freqU() {
+void freqD() {
 	if(t2 >= 0x5){
 		t2 -= 0x5;
 	} else if (t1 > 0x0){
